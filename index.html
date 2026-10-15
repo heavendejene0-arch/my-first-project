@@ -1,157 +1,154 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heaven | Portfolio</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+/* VARIABLES & RESET */
+:root {
+    --bg-color: #ffffff;
+    --card-bg: #f8fafc;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --accent: #0284c7;
+    --accent-hover: #0369a1;
+    --border-color: #e2e8f0;
+}
 
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="container nav-content">
-            <a href="#home" class="logo">Heaven.</a>
-            <button class="menu-button" id="menuButton" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
-                ☰
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- HOMEPAGE -->
-    <header class="hero" id="home">
-        <div class="container hero-content">
-            <div>
-                <span class="eyebrow">WELCOME TO MY PORTFOLIO ✨</span>
-                <h1>Hi, I'm <span>Heaven.</span><br> Building my digital future.</h1>
-                <p class="hero-description">
-                    I'm learning to turn ideas into useful digital experiences. Explore my journey, skills, and projects.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="button">Explore My Work ↗</a>
-                    <a href="#contact" class="button button-outline"> Let's Connect </a>
-                </div>
-            </div>
-            <div class="profile-card">
-                <div class="profile-circle">H</div>
-                <h2>Heaven</h2>
-                <p>Aspiring Developer</p>
-                <p>Learning • Creating • Growing</p>
-                <span class="availability"> ● Open to opportunities </span>
-            </div>
-        </div>
-    </header>
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-        <div class="container">
-            <h2 class="section-title">A Little About Me</h2>
-            <p class="section-intro">Every expert starts somewhere. This is my journey.</p>
-            <div class="about-card">
-                <p>Hello! I'm Heaven. I'm developing my skills in technology and learning how to create websites and software that solve real problems.</p>
-                <p>I enjoy learning new things, exploring creative ideas, and improving with every project I build.</p>
-                <p>My goal is to grow professionally, contribute to meaningful projects, and connect with people who value creativity, curiosity, and continuous learning.</p>
-            </div>
-        </div>
-    </section>
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
 
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-        <div class="container">
-            <h2 class="section-title">My Skills</h2>
-            <p class="section-intro">Technologies and abilities I'm developing on my journey.</p>
-            <div class="skills-grid">
-                <article class="skill-card">
-                    <div class="skill-icon">🌐</div>
-                    <h3>Web Development</h3>
-                    <p>Learning HTML, CSS, page structure, layouts, and responsive design.</p>
-                </article>
-                <article class="skill-card">
-                    <div class="skill-icon">💻</div>
-                    <h3>Programming</h3>
-                    <p>Developing problem-solving skills and learning to write clear, useful code.</p>
-                </article>
-                <article class="skill-card">
-                    <div class="skill-icon">🎨</div>
-                    <h3>Creative Thinking</h3>
-                    <p>Exploring clean visual design, usability, and ways to make digital experiences better.</p>
-                </article>
-            </div>
-        </div>
-    </section>
+/* NAVIGATION */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+}
 
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <p class="section-intro">A growing collection of things I build and learn from.</p>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <span class="project-label">Personal Project</span>
-                    <h3>My Portfolio Website</h3>
-                    <p>A responsive personal website built with HTML and CSS to introduce myself, present my work, and connect with opportunities.</p>
-                    <span class="project-status">Currently building</span>
-                </article>
-                <article class="project-card">
-                    <span class="project-label">Future Project</span>
-                    <h3>QR Attendance System</h3>
-                    <p>A planned classroom attendance project exploring how QR codes could help record student attendance more efficiently.</p>
-                    <span class="project-status">Idea in development</span>
-                </article>
-            </div>
-        </div>
-    </section>
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
 
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-        <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <p class="section-intro">Have an opportunity, project idea, or reason to connect? I'd love to hear from you.</p>
-            <div class="contact-box">
-                <h3>Let's create something meaningful.</h3>
-                <p>I'm interested in learning, collaborating, and exploring suitable job and freelance opportunities.</p>
-                <div class="contact-links">
-                    <a class="button" href="mailto:your.email@example.com">Email Me ✉</a>
-                    <a class="button button-outline" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-                </div>
-            </div>
-        </div>
-    </section>
+.logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--text-main);
+    text-decoration: none;
+    margin-right: 2rem;
+}
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <p>© <span id="year"></span> Heaven. Built with curiosity and 💜</p>
-        </div>
-    </footer>
+/* HIDE MENU LINKS BY DEFAULT - ONLY SHOW WHEN .open IS ADDED */
+.nav-links {
+    display: none;
+    list-style: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    gap: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
 
-    <!-- MOBILE MENU AND AUTOMATIC YEAR -->
-    <script>
-        const menuButton = document.getElementById("menuButton");
-        const navLinks = document.getElementById("navLinks");
-        
-        menuButton.addEventListener("click", function () {
-            const isOpen = navLinks.classList.toggle("open");
-            menuButton.setAttribute("aria-expanded", isOpen);
-            menuButton.textContent = isOpen ? "✕" : "☰";
-        });
+.nav-links.open {
+    display: flex;
+}
 
-        navLinks.querySelectorAll("a").forEach(function (link) {
-            link.addEventListener("click", function () {
-                navLinks.classList.remove("open");
-                menuButton.setAttribute("aria-expanded", "false");
-                menuButton.textContent = "☰";
-            });
-        });
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
 
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-</body>
-</html>
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.menu-button {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.75rem;
+    cursor: pointer;
+}
+
+/* HERO SECTION */
+.hero {
+    padding: 12rem 0 6rem 0;
+    text-align: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.profile-card {
+    display: none;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+h1 span {
+    color: var(--accent);
+}
+
+.hero-description {
+    color: var(--text-muted);
+    font-size: 1.125rem;
+    margin-bottom: 2.5rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* BUTTONS */
+.button {
+    background-color: var(--accent);
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
