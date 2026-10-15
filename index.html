@@ -1,444 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="./style.css">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Heaven's Portfolio</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
-
-  
-
-<link rel="stylesheet" href="style.css">
-
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Heaven | Portfolio</title>
     <meta name="description" content="Heaven's personal portfolio, skills, projects, and contact information.">
-
-    <style>
-        /* 1. COLORS AND BASIC SETTINGS */
-        
-:root {
-    --purple: #805AD5;
-    --dark-purple: #352052;
-    --lavender: #FAF7FF;
-    --light-purple: #EDE3FF;
-    --white: #FFFFFF;
-    --text: #302442;
-    --muted: #746783;
-}
-
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
-
-       body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
-    
-
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: min(1100px, 90%);
-            margin: auto;
-        }
-
-        .section {
-            padding: 85px 0;
-            scroll-margin-top: 85px;
-        }
-
-        .section-title {
-            color: var(--dark-purple);
-            font-size: clamp(28px, 4vw, 38px);
-            text-align: center;
-            margin-bottom: 12px;
-        }
-
-        .section-intro {
-            color: var(--muted);
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-
-        /* 2. NAVIGATION BAR */
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--light-purple);
-        }
-
-        .nav-content {
-            min-height: 72px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .logo {
-            color: var(--purple);
-            font-size: 25px;
-            font-weight: bold;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            list-style: none;
-        }
-
-        .nav-links a:hover {
-            color: var(--purple);
-        }
-
-        .menu-button {
-            display: none;
-            background: var(--light-purple);
-            color: var(--dark-purple);
-            border: 0;
-            padding: 9px 13px;
-            border-radius: 8px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        /* 3. BUTTONS */
-        .button {
-            display: inline-block;
-            background: var(--purple);
-            color: var(--white);
-            padding: 13px 22px;
-            border-radius: 10px;
-            font-weight: bold;
-            transition: transform 0.2s, background 0.2s;
-        }
-
-        .button:hover {
-            background: var(--dark-purple);
-            transform: translateY(-2px);
-        }
-
-        .button-outline {
-            background: transparent;
-            color: var(--purple);
-            border: 2px solid var(--purple);
-        }
-
-        .button-outline:hover {
-            color: white;
-        }
-
-        /* 4. HERO / HOMEPAGE */
-        .hero {
-            min-height: 570px;
-            display: flex;
-            align-items: center;
-            background:
-    radial-gradient(circle at 85% 20%, var(--light-purple) 0, transparent 28%),
-    linear-gradient(135deg, var(--lavender), var(--light-purple));
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1.4fr 0.8fr;
-            align-items: center;
-            gap: 55px;
-            padding-top: 60px;
-            padding-bottom: 60px;
-        }
-
-        .eyebrow {
-            display: inline-block;
-            color: var(--purple);
-            background: var(--white);
-            padding: 7px 14px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: clamp(38px, 6vw, 64px);
-            line-height: 1.12;
-            color: var(--dark-purple);
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: var(--purple);
-        }
-
-        .hero-description {
-            font-size: 18px;
-            color: var(--muted);
-            max-width: 540px;
-            margin-bottom: 28px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 13px;
-        }
-
-        .profile-card {
-            background: var(--white);
-            border: 1px solid var(--light-purple);
-            border-radius: 28px;
-            padding: 35px 25px;
-            text-align: center;
-            box-shadow: 0 20px 50px rgba(76, 45, 130, 0.10);
-        }
-
-        .profile-circle {
-            width: 145px;
-            height: 145px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            background: linear-gradient(135deg, #dfceff, #a987eb);
-            color: var(--dark-purple);
-            font-size: 54px;
-            font-weight: bold;
-            border: 6px solid #f5edff;
-        }
-
-        .profile-card h2 {
-            color: var(--dark-purple);
-            font-size: 24px;
-        }
-
-        .profile-card p {
-            color: var(--muted);
-            margin-top: 6px;
-        }
-
-        .availability {
-            display: inline-block;
-            margin-top: 18px;
-            color: #3c7d57;
-            background: #e9f8ee;
-            padding: 7px 12px;
-            border-radius: 30px;
-            font-size: 13px;
-        }
-
-        /* 5. ABOUT ME */
-        .about-card {
-            max-width: 800px;
-            margin: auto;
-            padding: 35px;
-            background: var(--white);
-            border: 1px solid var(--light-purple);
-            border-radius: 20px;
-        }
-
-        .about-card p + p {
-            margin-top: 15px;
-        }
-
-        /* 6. SKILLS */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .skill-card {
-            background: var(--white);
-            border: 1px solid var(--light-purple);
-            border-radius: 18px;
-            padding: 25px;
-        }
-
-        .skill-icon {
-            font-size: 30px;
-        }
-
-        .skill-card h3 {
-            color: var(--dark-purple);
-            margin: 12px 0 8px;
-        }
-
-        .skill-card p {
-            color: var(--muted);
-            font-size: 15px;
-        }
-
-        /* 7. PROJECTS */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
-        }
-
-        .project-card {
-            background: var(--white);
-            border: 1px solid var(--light-purple);
-            border-radius: 20px;
-            padding: 28px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 30px rgba(76, 45, 130, 0.09);
-        }
-
-        .project-label {
-            color: var(--purple);
-            font-size: 13px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .project-card h3 {
-            color: var(--dark-purple);
-            margin: 12px 0;
-            font-size: 22px;
-        }
-
-        .project-card p {
-            color: var(--muted);
-        }
-
-        .project-status {
-            display: inline-block;
-            margin-top: 18px;
-            padding: 6px 10px;
-            background: var(--lavender);
-            color: var(--purple);
-            border-radius: 7px;
-            font-size: 13px;
-        }
-
-        /* 8. CONTACT */
-        .contact-box {
-            max-width: 760px;
-            margin: auto;
-            padding: 40px 25px;
-            text-align: center;
-            background: var(--white);
-            border: 1px solid var(--light-purple);
-            border-radius: 22px;
-        }
-
-        .contact-box p {
-            color: var(--muted);
-            margin: 12px auto 25px;
-            max-width: 520px;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        /* 9. FOOTER */
-        footer {
-            padding: 25px 0;
-            background: var(--dark-purple);
-            color: var(--white);
-            text-align: center;
-            font-size: 14px;
-        }
-
-        /* 10. MOBILE PHONE LAYOUT */
-        @media (max-width: 760px) {
-            .menu-button {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 72px;
-                left: 0;
-                width: 100%;
-                padding: 20px 5%;
-                background: var(--white);
-                border-bottom: 1px solid var(--light-purple);
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 18px;
-            }
-
-            .nav-links.open {
-                display: flex;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 35px;
-            }
-
-            .hero {
-                min-height: auto;
-            }
-
-            .profile-card {
-                max-width: 400px;
-                width: 100%;
-                margin: auto;
-            }
-
-            .skills-grid,
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .about-card {
-                padding: 25px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
 
     <!-- NAVIGATION -->
     <nav>
         <div class="container nav-content">
             <a href="#home" class="logo">Heaven.</a>
-
-            <button
-                class="menu-button"
-                id="menuButton"
-                aria-label="Toggle navigation menu"
-                aria-expanded="false"
-                aria-controls="navLinks">
+            <button class="menu-button" id="menuButton" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
                 ☰
             </button>
-
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -452,38 +29,24 @@
     <!-- HOMEPAGE -->
     <header class="hero" id="home">
         <div class="container hero-content">
-
             <div>
                 <span class="eyebrow">WELCOME TO MY PORTFOLIO ✨</span>
-
-                <h1>
-                    Hi, I'm <span>Heaven.</span><br>
-                    Building my digital future.
-                </h1>
-
+                <h1>Hi, I'm <span>Heaven.</span><br> Building my digital future.</h1>
                 <p class="hero-description">
-                    I'm learning to turn ideas into useful digital
-                    experiences. Explore my journey, skills, and projects.
+                    I'm learning to turn ideas into useful digital experiences. Explore my journey, skills, and projects.
                 </p>
-
                 <div class="hero-buttons">
                     <a href="#projects" class="button">Explore My Work ↗</a>
-                    <a href="#contact" class="button button-outline">
-                        Let's Connect
-                    </a>
+                    <a href="#contact" class="button button-outline"> Let's Connect </a>
                 </div>
             </div>
-
             <div class="profile-card">
                 <div class="profile-circle">H</div>
                 <h2>Heaven</h2>
                 <p>Aspiring Developer</p>
                 <p>Learning • Creating • Growing</p>
-                <span class="availability">
-                    ● Open to opportunities
-                </span>
+                <span class="availability"> ● Open to opportunities </span>
             </div>
-
         </div>
     </header>
 
@@ -491,27 +54,11 @@
     <section class="section" id="about">
         <div class="container">
             <h2 class="section-title">A Little About Me</h2>
-            <p class="section-intro">
-                Every expert starts somewhere. This is my journey.
-            </p>
-
+            <p class="section-intro">Every expert starts somewhere. This is my journey.</p>
             <div class="about-card">
-                <p>
-                    Hello! I'm Heaven. I'm developing my skills in
-                    technology and learning how to create websites
-                    and software that solve real problems.
-                </p>
-
-                <p>
-                    I enjoy learning new things, exploring creative ideas,
-                    and improving with every project I build.
-                </p>
-
-                <p>
-                    My goal is to grow professionally, contribute to
-                    meaningful projects, and connect with people who
-                    value creativity, curiosity, and continuous learning.
-                </p>
+                <p>Hello! I'm Heaven. I'm developing my skills in technology and learning how to create websites and software that solve real problems.</p>
+                <p>I enjoy learning new things, exploring creative ideas, and improving with every project I build.</p>
+                <p>My goal is to grow professionally, contribute to meaningful projects, and connect with people who value creativity, curiosity, and continuous learning.</p>
             </div>
         </div>
     </section>
@@ -520,39 +67,23 @@
     <section class="section" id="skills">
         <div class="container">
             <h2 class="section-title">My Skills</h2>
-            <p class="section-intro">
-                Technologies and abilities I'm developing on my journey.
-            </p>
-
+            <p class="section-intro">Technologies and abilities I'm developing on my journey.</p>
             <div class="skills-grid">
-
                 <article class="skill-card">
                     <div class="skill-icon">🌐</div>
                     <h3>Web Development</h3>
-                    <p>
-                        Learning HTML, CSS, page structure,
-                        layouts, and responsive design.
-                    </p>
+                    <p>Learning HTML, CSS, page structure, layouts, and responsive design.</p>
                 </article>
-
                 <article class="skill-card">
                     <div class="skill-icon">💻</div>
                     <h3>Programming</h3>
-                    <p>
-                        Developing problem-solving skills and
-                        learning to write clear, useful code.
-                    </p>
+                    <p>Developing problem-solving skills and learning to write clear, useful code.</p>
                 </article>
-
                 <article class="skill-card">
                     <div class="skill-icon">🎨</div>
                     <h3>Creative Thinking</h3>
-                    <p>
-                        Exploring clean visual design, usability,
-                        and ways to make digital experiences better.
-                    </p>
+                    <p>Exploring clean visual design, usability, and ways to make digital experiences better.</p>
                 </article>
-
             </div>
         </div>
     </section>
@@ -561,38 +92,20 @@
     <section class="section" id="projects">
         <div class="container">
             <h2 class="section-title">My Projects</h2>
-            <p class="section-intro">
-                A growing collection of things I build and learn from.
-            </p>
-
+            <p class="section-intro">A growing collection of things I build and learn from.</p>
             <div class="projects-grid">
-
                 <article class="project-card">
                     <span class="project-label">Personal Project</span>
                     <h3>My Portfolio Website</h3>
-                    <p>
-                        A responsive personal website built with
-                        HTML and CSS to introduce myself, present
-                        my work, and connect with opportunities.
-                    </p>
-                    <span class="project-status">
-                        Currently building
-                    </span>
+                    <p>A responsive personal website built with HTML and CSS to introduce myself, present my work, and connect with opportunities.</p>
+                    <span class="project-status">Currently building</span>
                 </article>
-
                 <article class="project-card">
                     <span class="project-label">Future Project</span>
                     <h3>QR Attendance System</h3>
-                    <p>
-                        A planned classroom attendance project
-                        exploring how QR codes could help record
-                        student attendance more efficiently.
-                    </p>
-                    <span class="project-status">
-                        Idea in development
-                    </span>
+                    <p>A planned classroom attendance project exploring how QR codes could help record student attendance more efficiently.</p>
+                    <span class="project-status">Idea in development</span>
                 </article>
-
             </div>
         </div>
     </section>
@@ -601,35 +114,13 @@
     <section class="section" id="contact">
         <div class="container">
             <h2 class="section-title">Let's Connect</h2>
-            <p class="section-intro">
-                Have an opportunity, project idea, or reason to connect?
-                I'd love to hear from you.
-            </p>
-
+            <p class="section-intro">Have an opportunity, project idea, or reason to connect? I'd love to hear from you.</p>
             <div class="contact-box">
                 <h3>Let's create something meaningful.</h3>
-
-                <p>
-                    I'm interested in learning, collaborating,
-                    and exploring suitable job and freelance opportunities.
-                </p>
-
+                <p>I'm interested in learning, collaborating, and exploring suitable job and freelance opportunities.</p>
                 <div class="contact-links">
-                    <!-- Replace the sample email with your real email -->
-                    <a
-                        class="button"
-                        href="mailto:YOUR_EMAIL@example.com">
-                        Email Me ✉
-                    </a>
-
-                    <!-- Add your real LinkedIn profile URL -->
-                    <a
-                        class="button button-outline"
-                        href="https://www.linkedin.com/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        LinkedIn ↗
-                    </a>
+                    <a class="button" href="mailto:your.email@example.com">Email Me ✉</a>
+                    <a class="button button-outline" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
                 </div>
             </div>
         </div>
@@ -638,10 +129,7 @@
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p>
-                © <span id="year"></span> Heaven.
-                Built with curiosity and 💜
-            </p>
+            <p>© <span id="year"></span> Heaven. Built with curiosity and 💜</p>
         </div>
     </footer>
 
@@ -649,10 +137,9 @@
     <script>
         const menuButton = document.getElementById("menuButton");
         const navLinks = document.getElementById("navLinks");
-
+        
         menuButton.addEventListener("click", function () {
             const isOpen = navLinks.classList.toggle("open");
-
             menuButton.setAttribute("aria-expanded", isOpen);
             menuButton.textContent = isOpen ? "✕" : "☰";
         });
@@ -665,9 +152,7 @@
             });
         });
 
-        document.getElementById("year").textContent =
-            new Date().getFullYear();
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
-
 </body>
 </html>
